@@ -19,4 +19,6 @@ public interface StudentService {
     StudentResponseDto getStudentById(Long id);
 
     void deleteStudent(Long id);
+
+    List<StudentResponseDto> getBySchoolAttendedId(Long schoolId);
 }

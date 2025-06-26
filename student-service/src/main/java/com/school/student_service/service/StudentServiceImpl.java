@@ -14,7 +14,7 @@ import com.school.student_service.dto.StudentRequestDto;
 import com.school.student_service.dto.StudentResponseDto;
 import com.school.student_service.entity.Student;
 import com.school.student_service.exception.DuplicateResourceException;
-import com.school.student_service.exception.ResourceNotFound;
+import com.school.student_service.exception.ResourceNotFoundException;
 import com.school.student_service.mapper.StudentMapper;
 import com.school.student_service.repository.StudentRepository;
 
@@ -53,11 +53,18 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentResponseDto getStudentById(Long id) {
-        Student student =  studentRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFound("No student exists by this id"));
+        Student student = studentRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("No student exists by this id"));
 
         return studentMapper.toStudentResponseDto(student);
     }
 
-    
+    @Override
+    public List<StudentResponseDto> getBySchoolAttendedId(Long schoolId) {
+        return studentRepository.findBySchoolId(schoolId)
+                .stream()
+                .map(studentMapper::toStudentResponseDto)
+                .toList();
+    }
+
 }
