@@ -1,13 +1,13 @@
-Got it! Here's your **clean and detailed `README.md`** for your Spring Boot microservices project — written for **your own project**, with **no JavaGuides references**.
+Got it! Here's your   clean and detailed `README.md`   for your Spring Boot microservices project — written for   your own project  , with   no JavaGuides references  .
 
----
+
 
 ```markdown
 # 🎓 School Microservices System
 
 A scalable microservices-based system for managing student and school-related data using Spring Boot and Spring Cloud. This system follows modern architectural principles: service independence, centralized configuration, service discovery, API gateway routing, and distributed tracing.
 
----
+
 
 ## 📚 Table of Contents
 
@@ -24,13 +24,13 @@ A scalable microservices-based system for managing student and school-related da
 - [Running the Project](#running-the-project)
 - [Future Improvements](#future-improvements)
 
----
+
 
 ## 🧭 Overview
 
 This project demonstrates a microservices-based architecture for managing school operations. Each service handles a specific domain (e.g., Student, School, Department) and communicates over REST or message queues.
 
----
+
 
 ## 🧩 Microservices
 
@@ -45,7 +45,7 @@ This project demonstrates a microservices-based architecture for managing school
 
 > Each microservice has its own database.
 
----
+
 
 ## 🏗️ System Architecture
 
@@ -58,15 +58,15 @@ Client → API Gateway → \[student-service | school-service | department-servi
 
 ````
 
-- All microservices register with the **Discovery Server**.
-- **Gateway** routes external requests to appropriate services.
-- Services pull configs from the **Config Server**.
-- **Zipkin** and **Sleuth** enable distributed tracing.
+- All microservices register with the   Discovery Server  .
+-   Gateway   routes external requests to appropriate services.
+- Services pull configs from the   Config Server  .
+-   Zipkin   and   Sleuth   enable distributed tracing.
 - Optional: Add Kafka/RabbitMQ for async communication.
 
----
 
-## 🚀 Core Technologies
+
+##  Core Technologies
 
 - Java 17+
 - Spring Boot
@@ -78,20 +78,20 @@ Client → API Gateway → \[student-service | school-service | department-servi
 - Docker + Docker Compose (optional)
 - Gradle
 
----
 
-## 🔗 Service Communication
 
-- **Synchronous** via REST:
-  - Uses **OpenFeign** clients for inter-service calls
-- **Asynchronous** (future):
-  - Can be enhanced using **Kafka** or **RabbitMQ**
+##  Service Communication
 
----
+- Synchronous via REST:
+  - Uses   OpenFeign   clients for inter-service calls
+-   Asynchronous   (future):
+  - Can be enhanced using   Kafka   or   RabbitMQ  
 
-## 🛠️ Centralized Configuration
 
-- All services fetch their configuration from a **Spring Cloud Config Server**
+
+## Centralized Configuration
+
+- All services fetch their configuration from a   Spring Cloud Config Server  
 - Config is stored in a Git-based repository (can be local or remote)
 
 Example `bootstrap.yml` for each service:
@@ -104,20 +104,19 @@ spring:
       uri: http://localhost:8888
 ````
 
----
 
 ## 🔍 Service Discovery
 
-* **Eureka Server** is used as a **Service Registry**
-* All services automatically register and are discoverable by name
-* Load-balanced calls via service names instead of hardcoded URLs
+    Eureka Server   is used as a   Service Registry  
+  All services automatically register and are discoverable by name
+  Load-balanced calls via service names instead of hardcoded URLs
 
 ---
 
 ## 🌐 API Gateway
 
-* Acts as the single entry point to all microservices
-* Performs routing, load balancing, and basic filtering
+  Acts as the single entry point to all microservices
+  Performs routing, load balancing, and basic filtering
 
 Example route config:
 
@@ -129,16 +128,16 @@ spring:
         - id: student-service
           uri: lb://student-service
           predicates:
-            - Path=/api/students/**
+            - Path=/api/students/  
 ```
 
----
+
 
 ## 🔎 Distributed Tracing
 
-* **Spring Cloud Sleuth** adds trace IDs to logs across services
-* **Zipkin** collects and visualizes traces
-* Traceability makes debugging across services easy
+    Spring Cloud Sleuth   adds trace IDs to logs across services
+    Zipkin   collects and visualizes traces
+  Traceability makes debugging across services easy
 
 Start Zipkin on port `9411`:
 
@@ -146,24 +145,24 @@ Start Zipkin on port `9411`:
 docker run -d -p 9411:9411 openzipkin/zipkin
 ```
 
----
+
 
 ## 💡 Fault Tolerance
 
-* Use **Spring Cloud Circuit Breaker** with **Resilience4j** to:
+  Use   Spring Cloud Circuit Breaker   with   Resilience4j   to:
 
-  * Handle service failures gracefully
-  * Provide fallback methods for broken dependencies
+    Handle service failures gracefully
+    Provide fallback methods for broken dependencies
 
----
+
 
 ## ▶️ Running the Project
 
 ### Prerequisites
 
-* Java 17+
-* Gradle
-* Optional: Docker
+  Java 17+
+  Gradle
+  Optional: Docker
 
 ### Steps
 
@@ -180,16 +179,16 @@ Use `Postman` or a browser to test endpoints:
 GET http://localhost:8082/api/students
 ```
 
----
+
 
 ## 🌱 Future Improvements
 
-* Add Kafka/RabbitMQ for asynchronous events
-* Integrate JWT authentication
-* Deploy with Docker Compose or Kubernetes
-* Add monitoring
+  Add Kafka/RabbitMQ for asynchronous events
+  Integrate JWT authentication
+  Deploy with Docker Compose or Kubernetes
+  Add monitoring
 
----
+
 
 ## 🧠 Summary
 
