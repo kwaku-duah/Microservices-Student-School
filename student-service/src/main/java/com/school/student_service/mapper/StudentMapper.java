@@ -3,6 +3,7 @@ package com.school.student_service.mapper;
 import org.mapstruct.Mapper;
 
 import com.school.student_service.dto.StudentRequestDto;
+import com.school.student_service.dto.StudentResponseDto;
 import com.school.student_service.entity.Student;
 
 /*
@@ -16,4 +17,6 @@ import com.school.student_service.entity.Student;
 public interface StudentMapper {
     
     Student toEntity(StudentRequestDto dto);
+
+    StudentResponseDto toStudentResponseDto(Student student);
 }
