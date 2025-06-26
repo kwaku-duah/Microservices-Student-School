@@ -13,6 +13,10 @@ import com.school.student_service.dto.StudentResponseDto;
 
 public interface StudentService {
     StudentResponseDto createStudent(StudentRequestDto dto);
+
     List<StudentResponseDto> findAllStudents();
+
     StudentResponseDto getStudentById(Long id);
+
+    void deleteStudent(Long id);
 }
