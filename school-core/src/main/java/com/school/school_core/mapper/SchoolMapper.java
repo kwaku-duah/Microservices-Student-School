@@ -9,7 +9,7 @@ import com.school.school_core.entity.School;
 
 @Mapper(componentModel = "spring")
 public interface SchoolMapper {
-    
+
     @Mapping(target = "schoolId", ignore = true)
     School toEntity(SchoolRequestDto dto);
 
