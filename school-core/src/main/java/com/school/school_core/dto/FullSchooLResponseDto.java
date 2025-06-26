@@ -5,6 +5,4 @@ public record FullSchooLResponseDto(
         String email
 // List<Student> students About to establish openfeign client for comms Open
 // Feign client
-) {
-
-}
+) {}
