@@ -190,6 +190,7 @@ GET http://localhost:8082/api/students
 
 
 
-## 🧠 Summary
-
-This project illustrates how to structure a production-ready microservices system using Spring Boot and Spring Cloud. It covers service registration, config management, routing, tracing, and basic resilience patterns.
+The config-service centralises all the configurations for the various services
+very efficient and encouraged
+This project encapsulated the skeleton for building a proper microservices app
+Not all the services are complete, it houses everything that is needed to bootstrap a microservices application quickly
