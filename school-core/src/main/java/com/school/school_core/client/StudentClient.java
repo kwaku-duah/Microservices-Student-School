@@ -9,5 +9,5 @@ import org.springframework.cloud.openfeign.FeignClient;
 
 @FeignClient(name = "student-service", url = "http://localhost:8082")
 public interface StudentClient {
-   //method
+   //methods sign
 }
